@@ -32,27 +32,3 @@ next.addEventListener('click', () => {
   position = Math.max(position, -width * (dots.length - 1));
   list.style.marginLeft = `${position}px`;
 });
-
-prev.addEventListener('click', () => {
-  if (index > 0 && index <= (dots.length - 1)) {
-    dots[index].className = ('carousel__dot');
-    index--;
-    dots[index].className = ('carousel__dot carousel__dot_active');
-  }
-
-  position += width;
-  position = Math.min(position, 0);
-  list.style.marginLeft = `${position}px`;
-});
-
-next.addEventListener('click', () => {
-  if (index >= 0 && index < (dots.length - 1)) {
-    dots[index].className = ('carousel__dot');
-    index++;
-    dots[index].className = ('carousel__dot carousel__dot_active');
-  }
-
-  position -= width;
-  position = Math.max(position, -width * (dots.length - 1));
-  list.style.marginLeft = `${position}px`;
-});
